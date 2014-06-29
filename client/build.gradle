@@ -1,0 +1,17 @@
+apply plugin:'cpp'
+
+executables {
+    main {}
+}
+
+model {
+    toolChains {
+        gcc(Gcc) {
+        }
+    }
+}
+
+binaries.all {
+    cppCompiler.args "-std=c++11"
+    linker.args      "-lzmq"
+}
